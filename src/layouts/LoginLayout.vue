@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-content>
       <v-container
-        class="fill-height"
+        class="fill-height justify-center"
         fluid
       >
         <v-row
@@ -52,17 +52,20 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        id: '',
-        pw: '',
-      };
+import Vue from 'vue';
+
+export default {
+  data() {
+    return {
+      id: '',
+      pw: '',
+    };
+  },
+  methods: {
+    onLogin() {
+      Vue.$cookies.set('auth-inven', true, '1y', null);
+      this.$router.push('/home');
     },
-    methods: {
-      onLogin() {
-        this.$router.push('/home');
-      },
-    },
-  }
+  },
+}
 </script>

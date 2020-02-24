@@ -11,7 +11,16 @@ module.exports = {
         '@': path.join(__dirname, 'src/'),
         '@layouts': path.join(__dirname, 'src/layouts'),
         '@plugins': path.join(__dirname, 'src/plugins'),
+        '@views': path.join(__dirname, 'src/views'),
       }
-    }
+    },
+    module: {
+      rules: [
+        {
+          test: /\.pug$/,
+          loader: 'pug-plain-loader'
+        }
+      ]
+    },
   },
 }
